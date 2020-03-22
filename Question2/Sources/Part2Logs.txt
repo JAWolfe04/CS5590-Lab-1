@@ -1,0 +1,189 @@
+[cloudera@quickstart ~]$ hadoop jar YoutubeQ1.jar youtubeq1.YoutubeQ1 /user/cloudera/Youtube/Input /user/cloudera/Youtube/Output/Q1
+20/03/22 10:16:58 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+20/03/22 10:16:59 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+20/03/22 10:16:59 INFO input.FileInputFormat: Total input paths to process : 1
+20/03/22 10:16:59 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:967)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:705)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:894)
+20/03/22 10:16:59 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:967)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:705)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:894)
+20/03/22 10:16:59 INFO mapreduce.JobSubmitter: number of splits:1
+20/03/22 10:17:00 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1584897069328_0001
+20/03/22 10:17:00 INFO impl.YarnClientImpl: Submitted application application_1584897069328_0001
+20/03/22 10:17:01 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1584897069328_0001/
+20/03/22 10:17:01 INFO mapreduce.Job: Running job: job_1584897069328_0001
+20/03/22 10:17:13 INFO mapreduce.Job: Job job_1584897069328_0001 running in uber mode : false
+20/03/22 10:17:13 INFO mapreduce.Job:  map 0% reduce 0%
+20/03/22 10:17:23 INFO mapreduce.Job:  map 100% reduce 0%
+20/03/22 10:17:37 INFO mapreduce.Job:  map 100% reduce 100%
+20/03/22 10:17:37 INFO mapreduce.Job: Job job_1584897069328_0001 completed successfully
+20/03/22 10:17:38 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=94
+		FILE: Number of bytes written=286947
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=969529
+		HDFS: Number of bytes written=78
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=7236
+		Total time spent by all reduces in occupied slots (ms)=11535
+		Total time spent by all map tasks (ms)=7236
+		Total time spent by all reduce tasks (ms)=11535
+		Total vcore-milliseconds taken by all map tasks=7236
+		Total vcore-milliseconds taken by all reduce tasks=11535
+		Total megabyte-milliseconds taken by all map tasks=7409664
+		Total megabyte-milliseconds taken by all reduce tasks=11811840
+	Map-Reduce Framework
+		Map input records=4100
+		Map output records=4066
+		Map output bytes=64411
+		Map output materialized bytes=94
+		Input split bytes=140
+		Combine input records=4066
+		Combine output records=5
+		Reduce input groups=5
+		Reduce shuffle bytes=94
+		Reduce input records=5
+		Reduce output records=5
+		Spilled Records=10
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=175
+		CPU time spent (ms)=2120
+		Physical memory (bytes) snapshot=341544960
+		Virtual memory (bytes) snapshot=3015639040
+		Total committed heap usage (bytes)=226365440
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=969389
+	File Output Format Counters 
+		Bytes Written=78
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/Youtube/Output/Q1 | head -20
+cat: `/user/cloudera/Youtube/Output/Q1': Is a directory
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera/Youtube/Output/Q1
+Found 2 items
+-rw-r--r--   1 cloudera cloudera          0 2020-03-22 10:17 /user/cloudera/Youtube/Output/Q1/_SUCCESS
+-rw-r--r--   1 cloudera cloudera         78 2020-03-22 10:17 /user/cloudera/Youtube/Output/Q1/part-r-00000
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/Youtube/Output/Q1/part-r-00000 | head -20
+Entertainment	908
+Music	862
+Comedy	414
+People & Blogs	398
+News & Politics	333
+[cloudera@quickstart ~]$ hadoop jar YoutubeQ2.jar youtubeq2.YoutubeQ2 /user/cloudera/Youtube/Input /user/cloudera/Youtube/Output/Q2
+20/03/22 11:09:23 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+20/03/22 11:09:24 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+20/03/22 11:09:24 INFO input.FileInputFormat: Total input paths to process : 1
+20/03/22 11:09:24 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:967)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:705)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:894)
+20/03/22 11:09:24 INFO mapreduce.JobSubmitter: number of splits:1
+20/03/22 11:09:25 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1584897069328_0002
+20/03/22 11:09:25 INFO impl.YarnClientImpl: Submitted application application_1584897069328_0002
+20/03/22 11:09:25 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1584897069328_0002/
+20/03/22 11:09:25 INFO mapreduce.Job: Running job: job_1584897069328_0002
+20/03/22 11:09:36 INFO mapreduce.Job: Job job_1584897069328_0002 running in uber mode : false
+20/03/22 11:09:36 INFO mapreduce.Job:  map 0% reduce 0%
+20/03/22 11:09:44 INFO mapreduce.Job:  map 100% reduce 0%
+20/03/22 11:09:52 INFO mapreduce.Job:  map 100% reduce 100%
+20/03/22 11:09:52 INFO mapreduce.Job: Job job_1584897069328_0002 completed successfully
+20/03/22 11:09:52 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=186
+		FILE: Number of bytes written=287135
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=969529
+		HDFS: Number of bytes written=160
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=6012
+		Total time spent by all reduces in occupied slots (ms)=5722
+		Total time spent by all map tasks (ms)=6012
+		Total time spent by all reduce tasks (ms)=5722
+		Total vcore-milliseconds taken by all map tasks=6012
+		Total vcore-milliseconds taken by all reduce tasks=5722
+		Total megabyte-milliseconds taken by all map tasks=6156288
+		Total megabyte-milliseconds taken by all reduce tasks=5859328
+	Map-Reduce Framework
+		Map input records=4100
+		Map output records=4066
+		Map output bytes=65056
+		Map output materialized bytes=186
+		Input split bytes=140
+		Combine input records=4066
+		Combine output records=10
+		Reduce input groups=10
+		Reduce shuffle bytes=186
+		Reduce input records=10
+		Reduce output records=10
+		Spilled Records=20
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=167
+		CPU time spent (ms)=1960
+		Physical memory (bytes) snapshot=356171776
+		Virtual memory (bytes) snapshot=3015503872
+		Total committed heap usage (bytes)=226365440
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=969389
+	File Output Format Counters 
+		Bytes Written=160
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/Youtube/Output/Q2/part-r-00000 | head -20
+-17Zbw0e6zs	5.0
+-6M41YqM_xk	5.0
+-8BwggJEPZQ	5.0
+-BArP_-_vXI	5.0
+-BbtF1Ysel0	5.0
+-FpBVhNdQXg	5.0
+-HaI1et-9_U	5.0
+-LGcnCr_hpA	5.0
+-WkXxJmwZyw	5.0
+-_N0xKlxeqo	5.0
+[cloudera@quickstart ~]$ 
+

@@ -1,0 +1,5 @@
+Entertainment	908
+Music	862
+Comedy	414
+People & Blogs	398
+News & Politics	333
